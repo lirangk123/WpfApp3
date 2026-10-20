@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+        <StackPanel.Background >
+            <ImageBrush ImageSource="/hotel.png" Stretch="Fill"/>
+        </StackPanel.Background>
+        
+        <TextBlock Text="המלונות של לירן" Margin="220,0,220,0" TextAlignment="Center" FontSize="40" Background="White" Opacity="0.7"></TextBlock>
+        <TextBlock Text="בחר בחדר שאתה רוצה" TextAlignment="Center" FontSize="26" Background="White" Opacity="0.7"/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <RadioButton x:Name="Single" Content="חדר יחיד   " FontSize="20" Click="SinlgeChoose" Foreground="white"/>
+            <RadioButton x:Name="Double" Content="חדר זוגי   " FontSize="20" Click="DoubleChoose" Foreground="white"/>
+            <RadioButton x:Name="Triple" Content="חדר לשלושה   " FontSize="20" Click="TripleChoose" Foreground="white"/>
+            <RadioButton x:Name="Quad" Content="חדר לארבעה   " FontSize="20" Click="QuadChoose" Foreground="white"/>
+        </StackPanel>
+        <TextBlock Text="בחר טווח תאריכים" FontSize="25" Margin="0,0,0,20" HorizontalAlignment="Center" Background="White" Opacity="0.7"></TextBlock>
+        <ComboBox x:Name="MyComboBox" HorizontalAlignment="Center" Width="110" SelectionChanged="MyComboBox_SelectionChanged">
+            <ComboBoxItem Content="לירן רויאל"/>
+            <ComboBoxItem Content="לירנובה"/>
+            <ComboBoxItem Content="לירן ויסטה"/>
+        </ComboBox>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="תאריך חזרה" FontSize="15" Margin="300,10,0,0" Background="White" Opacity="0.7"></TextBlock>
+            <TextBlock Text="תאריך הגעה" FontSize="15" Margin="145,10,0,0" Background="White" Opacity="0.7"></TextBlock>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+            <Calendar x:Name="ReturnCalendar" Margin="200,0,0,0"
+                      SelectedDatesChanged="ReturnChange" SelectionMode="SingleDate"/>
+            <Calendar x:Name="ArriveCalendar" Margin="50 , 0 , 100 ,0"
+                  SelectedDatesChanged="ArriveChange" SelectionMode="SingleDate"/>
+
+        </StackPanel>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="Price" Text="0" FontSize="15" Margin="320,0,0,0" Background="White" Opacity="0.7"></TextBlock>
+            <TextBlock Text=" :תשלום" FontSize="15" Margin="0,0,0,0" Background="White" Opacity="0.7"></TextBlock>
+            <TextBlock x:Name="NightAmount" Text="0" FontSize="15" Margin="140,0,0,0" Background="White" Opacity="0.7"></TextBlock>
+            <TextBlock Text=" :כמות לילות" FontSize="15" Margin="0,0,0,0" Background="White" Opacity="0.7"></TextBlock>
+        </StackPanel>
+    </StackPanel>
+
+</Window>
